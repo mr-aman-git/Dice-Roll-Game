@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'styled-components';
 import Dice from '../assets/dices1.png'
 import "./GameHome.css"
 
