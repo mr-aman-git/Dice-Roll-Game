@@ -18,9 +18,10 @@ const NumberSelect = () => {
 
       if(selectNum==randomNumber){
         setScore((prev)=>prev + randomNumber);
+        toast.success(`Number Match: ${randomNumber}`, {position:"top-right", theme: "colored"});
       } 
       else if (selectNum ==''){
-        toast.error("Select a Number", {position:"top-right", theme: "colored"});
+        toast.error("You have not selected any number", {position:"top-right", theme: "colored"});
       }
       else{
         setScore((prev)=>prev - 1);
