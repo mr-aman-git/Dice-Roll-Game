@@ -6,16 +6,29 @@ import RollDice from './RollDice'
 const NumberSelect = () => {
     let numarry=[1, 2, 3, 4, 5, 6];
     let[selectNum, setSelectNum]= useState("");
+    let[currentNumber, setCurrentNumber]= useState('');
+    let[score, setScore]= useState('0');
+
+
+    let generateRandom=()=>{
+      let randomNumber= Math.floor(Math.random()*6)+1
+      setCurrentNumber((prev)=>randomNumber);
+
+      if(selectNum==randomNumber){
+        setScore((prev)=>prev + randomNumber);
+      } else{
+        setScore((prev)=>prev - 1);
+      };
+      setSelectNum('');
+  }
     
-    let storenum= selectNum;
-    console.log(storenum);
-  
+    
 
   return (
     <>
     <div className="numberSelect">
         <div className="zero-num">
-            <h1>0</h1>
+            <h1>{score}</h1>
             <p>Total Score</p>
         </div>
       <div className="main-div-for-support">
@@ -33,7 +46,7 @@ const NumberSelect = () => {
 
     </div>
     
-   < RollDice/>
+   < RollDice currentNumber={currentNumber} generateRandom={generateRandom}/>
     </>
     
   )
