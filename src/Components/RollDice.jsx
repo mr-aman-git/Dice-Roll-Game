@@ -7,7 +7,7 @@ import One4 from '../assets/four.png'
 import One5 from '../assets/five.png'
 import One6 from '../assets/six.png'
 
-const RollDice = ({currentNumber, generateRandom}) => {
+const RollDice = ({currentNumber, generateRandom, setScore}) => {
     
     
 
@@ -38,7 +38,7 @@ const RollDice = ({currentNumber, generateRandom}) => {
             <p>Click on Dice to roll</p>
 
             <div className="rolldice-btn">
-            <button className='btn-1'>Reset Score</button>
+            <button className='btn-1' onClick={()=>setScore('0')}>Reset Score</button>
             <button className='btn-2'>Show Rules</button>
         </div>
         </div>

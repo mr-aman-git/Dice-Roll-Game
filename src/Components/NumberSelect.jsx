@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import './NumberSelect.css'
 import RollDice from './RollDice'
+import { ToastContainer, toast } from 'react-toastify';
+
 
 
 const NumberSelect = () => {
@@ -16,7 +18,11 @@ const NumberSelect = () => {
 
       if(selectNum==randomNumber){
         setScore((prev)=>prev + randomNumber);
-      } else{
+      } 
+      else if (selectNum ==''){
+        toast.error("Select a Number", {position:"top-right", theme: "colored"});
+      }
+      else{
         setScore((prev)=>prev - 1);
       };
       setSelectNum('');
@@ -46,7 +52,8 @@ const NumberSelect = () => {
 
     </div>
     
-   < RollDice currentNumber={currentNumber} generateRandom={generateRandom}/>
+   < RollDice currentNumber={currentNumber} generateRandom={generateRandom} setScore={setScore}/>
+   <ToastContainer />
     </>
     
   )
