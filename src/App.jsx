@@ -12,7 +12,7 @@ const App = () => {
   return (
     <>
     {
-      isPlay ? <NumberSelect /> : <GameHomepage toggle={togglePlay}/>
+      isPlay ? <NumberSelect />:<GameHomepage toggle={togglePlay}/>
     }
     
     </>

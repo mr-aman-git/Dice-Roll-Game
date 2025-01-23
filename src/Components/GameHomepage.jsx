@@ -12,7 +12,7 @@ const GameHomepage = ({toggle}) => {
 
         <div className="game-content">
             <h1>Dice Game</h1>
-            <button onClick={toggle} className='PlayNow'>Play Now</button>
+            <button onClick= {toggle} className='PlayNow'>Play Now</button>
         </div>
     </div>
     </>
