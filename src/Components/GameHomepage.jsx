@@ -1,9 +1,8 @@
-import React from 'react'
 import Dice from '../assets/dices1.png'
 import "./GameHome.css"
+import React from 'react'
 
-
-const GameHomepage = () => {
+const GameHomepage = ({toggle}) => {
   return (
     <>
     <div className="main-section">
@@ -13,9 +12,7 @@ const GameHomepage = () => {
 
         <div className="game-content">
             <h1>Dice Game</h1>
-            <Link to={'/NumberSelect'}>
-            <button>Play Now</button>
-            </Link>
+            <button onClick={toggle} className='PlayNow'>Play Now</button>
         </div>
     </div>
     </>

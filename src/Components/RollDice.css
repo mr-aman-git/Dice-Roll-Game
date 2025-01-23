@@ -44,7 +44,6 @@ html,body{
     border: 1px solid black;
     border-radius: 4px;
     outline: none;
-    background-color: white;
     cursor: pointer;
     transition: 0.2s ease-in;
 }
