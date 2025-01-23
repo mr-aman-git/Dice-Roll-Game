@@ -13,7 +13,9 @@ const GameHomepage = () => {
 
         <div className="game-content">
             <h1>Dice Game</h1>
+            <Link to={'/NumberSelect'}>
             <button>Play Now</button>
+            </Link>
         </div>
     </div>
     </>

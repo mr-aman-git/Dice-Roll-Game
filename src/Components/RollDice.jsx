@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import ShowRules from './ShowRules'
 import './RollDice.css'
 import One from '../assets/one.png'
 import One2 from '../assets/two.png'
@@ -8,8 +9,7 @@ import One5 from '../assets/five.png'
 import One6 from '../assets/six.png'
 
 const RollDice = ({currentNumber, generateRandom, setScore}) => {
-    
-    
+    let [showRules, setShowRules]= useState(false);
 
     let diceImage;
     if(currentNumber===1){
@@ -39,10 +39,12 @@ const RollDice = ({currentNumber, generateRandom, setScore}) => {
 
             <div className="rolldice-btn">
             <button className='btn-1' onClick={()=>setScore('0')}>Reset Score</button>
-            <button className='btn-2'>Show Rules</button>
+            <button className='btn-2' onClick={()=>setShowRules((prev)=>!prev) }>{showRules ? "Hide" : "Show"} Rules</button>
         </div>
         </div>
     </div>
+    {showRules && <ShowRules />}
+    
     </>
   )
 }
